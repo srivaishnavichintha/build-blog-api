@@ -2,5 +2,5 @@ fastapi==0.125.0
 uvicorn==0.38.0
 sqlalchemy==2.0.45
 pydantic[email]==2.12.5
-peewee==3.19.5
+peewee==3.18.3
 email-validator==2.3.0
