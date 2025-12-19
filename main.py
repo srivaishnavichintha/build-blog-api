@@ -122,3 +122,30 @@ def delete_post(id: int):
         return {"msg": "Post deleted"}
     except models.Post.DoesNotExist:
         raise HTTPException(404, "Post not found")
+@app.get("/", response_class=JSONResponse)
+async def root():
+    return {
+        "message": "Welcome to My Blog API",
+        "description": "This API allows you to manage authors and posts with one-to-many relationships.",
+        "endpoints": {
+            "Authors": {
+                "Create Author": "POST /authors",
+                "List All Authors": "GET /authors",
+                "Get Author by ID": "GET /authors/{id}",
+                "Update Author": "PUT /authors/{id}",
+                "Delete Author": "DELETE /authors/{id}",
+                "Get Posts by Author": "GET /authors/{id}/posts"
+            },
+            "Posts": {
+                "Create Post": "POST /posts",
+                "List All Posts": "GET /posts",
+                "Get Post by ID": "GET /posts/{id}",
+                "Update Post": "PUT /posts/{id}",
+                "Delete Post": "DELETE /posts/{id}"
+            }
+        },
+        "notes": [
+            "Use /docs for Swagger UI.",
+            "Use /redoc for detailed API documentation."
+        ]
+    }
