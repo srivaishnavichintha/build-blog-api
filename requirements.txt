@@ -1,7 +1,6 @@
 fastapi==0.125.0
 uvicorn==0.38.0
 sqlalchemy==2.0.45
-pydantic==2.12.5
+pydantic[email]==2.12.5
+peewee==3.19.5
 email-validator==2.3.0
-psycopg2-binary==2.9.11
-peewee==3.20.0
